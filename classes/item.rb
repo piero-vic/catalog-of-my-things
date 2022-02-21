@@ -10,8 +10,12 @@ class Item
   end
 
   def can_be_archived?
-    return true if DateTime.now - @publish_date > 10
+    ((Date.today - @publish_date).to_i / 365.00) > 10.00
+  end
 
-    false
+  def move_to_archive
+    @archived = can_be_archived?
   end
 end
+# item = Item.new('2007-12-04')
+# item.move_to_archive
