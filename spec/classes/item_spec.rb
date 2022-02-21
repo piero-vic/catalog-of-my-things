@@ -18,4 +18,19 @@ describe Item do
       end
     end
   end
+
+  describe '#move_to_archive' do
+    context 'date older than 10' do
+      item = Item.new('2000-12-04')
+      it 'should set archive to true' do
+        expect(item.move_to_archive).to be true
+      end
+    end
+    context 'date not older than 10' do
+      item = Item.new('2020-12-04')
+      it 'should set archive to false' do
+        expect(item.move_to_archive).to be false
+      end
+    end
+  end
 end
