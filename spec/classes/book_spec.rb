@@ -3,9 +3,14 @@ require_relative '../../classes/item'
 
 describe Book do
   context 'When created' do
+    book = Book.new('publisher1', 'good', '2012-04-02')
     it 'should be a kind of item Item' do
-      book = Book.new('publisher1', 'good', '2012-04-02')
       expect(book).to be_a_kind_of(Item)
+    end
+
+    it 'should have publisher and cover_state' do
+      expect(book.publisher).to eql 'publisher1'
+      expect(book.cover_state).to eql 'good'
     end
   end
 
