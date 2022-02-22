@@ -13,4 +13,16 @@ describe Label do
       expect(label.items).to be_empty
     end
   end
+
+  describe '#add_item' do
+    label = Label.new('Label1', 'red')
+    it 'should add the item to the items list' do
+      # Mock Item object
+      item_mock = double() 
+      allow(item_mock).to receive(:label=)
+
+      label.add_item(item_mock)
+      expect(label.items[0]).to be item_mock
+    end
+  end
 end
