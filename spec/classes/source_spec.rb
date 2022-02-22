@@ -13,7 +13,6 @@ describe Source do
     end
   end
 
-  
   describe '#add_item' do
     context 'when added' do
       source = Source.new('Emma')
