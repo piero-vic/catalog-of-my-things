@@ -57,6 +57,7 @@ describe Item do
       end
     end
   end
+
   describe '#label' do
     context 'when added' do
       item = Item.new('2017-05-09')
@@ -65,6 +66,18 @@ describe Item do
         allow(label_mock).to receive_message_chain(:items, :include?, :push)
         item.label = label_mock
         expect(item.label).to eq label_mock
+      end
+    end
+  end
+
+  describe '#source' do
+    context 'when added' do
+      item = Item.new('2017-05-09')
+      it 'should add source' do
+        source_mock = double('Blockbuster')
+        allow(source_mock).to receive_message_chain(:items, :include?, :push)
+        item.source = source_mock
+        expect(item.source).to eq source_mock
       end
     end
   end
