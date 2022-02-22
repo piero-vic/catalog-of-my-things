@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  attr_reader :publish_date
+  attr_reader :publish_date, :genre
 
   def initialize(publish_date, archived: false)
     @id = Random.rand(1..10_000)
@@ -16,6 +16,9 @@ class Item
   def move_to_archive
     @archived = can_be_archived?
   end
+
+  def genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(genre)
+  end
 end
-# item = Item.new('2007-12-04')
-# item.move_to_archive

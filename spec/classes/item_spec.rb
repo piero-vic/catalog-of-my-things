@@ -33,4 +33,16 @@ describe Item do
       end
     end
   end
+
+  describe '#genre' do
+    context 'when added' do
+      item = Item.new('2021-05-22')
+      it 'should cointain genre_mock' do
+        genre_mock = double('Pop')
+        allow(genre_mock).to receive_message_chain(:items, :include?, :push)
+        item.genre = genre_mock
+        expect(item.genre).to eq genre_mock
+      end
+    end
+  end
 end
