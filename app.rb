@@ -1,6 +1,7 @@
 require_relative './classes/book'
 require_relative './classes/movie'
 require_relative './classes/music_album'
+require_relative './classes/game'
 require_relative './app_modules/add_item'
 
 class App

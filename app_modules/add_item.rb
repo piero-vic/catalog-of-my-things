@@ -22,11 +22,23 @@ module AddItem
   def add_movie
     print "\nEnter publishing date: "
     publish_date = gets.chomp
-    print "\nIs it  silent?  y/n "
+    print "\nIs it silent?  y/n "
     silent = gets.chomp.downcase
     silent = true if silent == 'y'
     silent = false if silent == 'n'
     @items.push(Movie.new(publish_date, silent: silent))
+  end
+
+  def add_game
+    print "\nEnter publishing date: "
+    publish_date = gets.chomp
+    print "\nIs it multiplayer?  y/n "
+    multiplayer = gets.chomp.downcase
+    multiplayer = true if multiplayer == 'y'
+    multiplayer = false if multiplayer == 'n'
+    print "\nEnter date of last play: "
+    last_played_at = gets.chomp
+    @items.push(Game.new(publish_date: publish_date, multiplayer: multiplayer, last_played_at: last_played_at))
   end
 
   def add_new_item
@@ -47,7 +59,7 @@ module AddItem
     when 3
       add_movie
     when 4
-      puts '4'
+      add_game
     end
   end
 end
