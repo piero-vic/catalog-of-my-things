@@ -9,6 +9,16 @@ module AddItem
     @items.push(Book.new(publisher, cover_state, publish_date))
   end
 
+  def add_album
+    print "\nEnter publishing date: "
+    publish_date = gets.chomp
+    print "\nIs it on spotify?  y/n "
+    spotify = gets.chomp.downcase
+    spotify = true if spotify == 'y'
+    spotify = false if spotify == 'n'
+    @items.push(MusicAlbum.new(publish_date, on_spotify: spotify))
+  end
+
   def add_new_item
     menu = <<~HEREDOC
       [1] Add a book
@@ -23,7 +33,7 @@ module AddItem
     when 1
       add_book
     when 2
-      puts '2'
+      add_album
     when 3
       puts '3'
     when 4
