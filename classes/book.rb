@@ -6,4 +6,10 @@ class Book < Item
     @publisher = publisher
     @cover_state = cover_state
   end
+
+  def can_be_archived?()
+    return true if @cover_state == 'bad'
+
+    Item.instance_method(:can_be_archived?).bind(self).call
+  end
 end
