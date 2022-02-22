@@ -18,7 +18,7 @@ describe Label do
     label = Label.new('Label1', 'red')
     it 'should add the item to the items list' do
       # Mock Item object
-      item_mock = double() 
+      item_mock = double
       allow(item_mock).to receive(:label=)
 
       label.add_item(item_mock)
