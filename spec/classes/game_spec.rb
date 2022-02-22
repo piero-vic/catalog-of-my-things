@@ -1,4 +1,4 @@
-require_relative '../../classes/game.rb'
+require_relative '../../classes/game'
 
 describe Game do
   context 'When created' do
