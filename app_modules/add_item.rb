@@ -19,6 +19,16 @@ module AddItem
     @items.push(MusicAlbum.new(publish_date, on_spotify: spotify))
   end
 
+  def add_movie
+    print "\nEnter publishing date: "
+    publish_date = gets.chomp
+    print "\nIs it  silent?  y/n "
+    silent = gets.chomp.downcase
+    silent = true if silent == 'y'
+    silent = false if silent == 'n'
+    @items.push(Movie.new(publish_date, silent: silent))
+  end
+
   def add_new_item
     menu = <<~HEREDOC
       [1] Add a book
@@ -35,7 +45,7 @@ module AddItem
     when 2
       add_album
     when 3
-      puts '3'
+      add_movie
     when 4
       puts '4'
     end
