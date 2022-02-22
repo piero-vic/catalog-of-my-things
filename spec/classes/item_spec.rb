@@ -57,4 +57,15 @@ describe Item do
       end
     end
   end
+  describe '#label' do
+    context 'when added' do
+      item = Item.new('2017-05-09')
+      it 'should add label' do
+        label_mock = double('It')
+        allow(label_mock).to receive_message_chain(:items, :include?, :push)
+        item.label = label_mock
+        expect(item.label).to eq label_mock
+      end
+    end
+  end
 end
