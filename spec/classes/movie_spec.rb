@@ -10,9 +10,9 @@ describe Movie do
   end
 
   describe '#can_be_archived?' do
-    context 'when silent is true' do
+    context 'when silent is false' do
       movie = Movie.new('2020-05-05')
-      it 'should return true when silent' do
+      it 'should return false when silent' do
         expect(movie.can_be_archived?).to be false
       end
     end
