@@ -4,7 +4,7 @@ require_relative '../../classes/movie'
 describe Movie do
   context 'When created' do
     movie = Movie.new('2020-12-23')
-    it 'should have a silet' do
+    it 'should be a king of item' do
       expect(movie).to be_kind_of(Item)
     end
   end
