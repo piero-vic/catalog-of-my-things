@@ -1,4 +1,8 @@
+require_relative './classes/book'
+require_relative './app_modules/add_item'
 class App
+  include AddItem
+
   def initialize
     @items = []
   end
@@ -6,14 +10,16 @@ class App
   def run
     print "Welcome to the catalog of things\n\n"
     loop do
-      puts '[1] Add new Item'
-      puts '[2] List Items'
-      puts '[3] List Properties'
-      puts '[4] Exit'
+      puts <<~HEREDOC
+        [1] Add new Item
+        [2] List Items
+        [3] List Properties
+        [4] Exit
+      HEREDOC
       user_input = gets.chomp.to_i
       case user_input
       when 1
-        puts 'Add new Item'
+        add_new_item
       when 2
         puts 'List Items'
       when 3
