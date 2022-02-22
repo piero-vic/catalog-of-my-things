@@ -45,4 +45,16 @@ describe Item do
       end
     end
   end
+
+  describe '#author' do
+    context 'when added' do
+      item = Item.new('2000-05-05')
+      it 'should own an author' do
+        author_mock = double('Neruda')
+        allow(author_mock).to receive_message_chain(:items, :include?, :push)
+        item.author = author_mock
+        expect(item.author).to eq author_mock
+      end
+    end
+  end
 end
