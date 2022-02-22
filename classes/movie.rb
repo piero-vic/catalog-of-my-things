@@ -1,8 +1,8 @@
 require_relative 'item'
+require 'date'
 
 class Movie < Item
-  attr_reader :silent
-  attr_accessor :archive, :publish_date
+  attr_accessor :archive, :publish_date, :silent
 
   def initialize(publish_date, silent: false, archived: false)
     super(publish_date, archived: archived)
@@ -10,6 +10,6 @@ class Movie < Item
   end
 
   def can_be_archived?
-    return true if super || @silent
+    super || @silent
   end
 end
