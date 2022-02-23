@@ -14,6 +14,7 @@ require_relative './app_modules/add_props'
 require_relative './app_modules/list_props'
 
 require_relative './app_modules/store'
+require_relative './app_modules/read_data.rb'
 
 class App
   include AddItem
@@ -21,6 +22,7 @@ class App
   include AddProps
   include ListProps
   include Store
+  include ReadData
 
   def initialize
     @items = []
