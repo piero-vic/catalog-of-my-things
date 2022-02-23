@@ -23,10 +23,26 @@ module ReadData
     end
   end
 
+  def set_item_props(obj, item)
+    obj.author = @item_props.select { |prop| prop.id == item['author'] }[0]
+    obj.genre = @item_props.select { |prop| prop.id == item['genre'] }[0]
+    obj.label = @item_props.select { |prop| prop.id == item['label'] }[0]
+    obj.source = @item_props.select { |prop| prop.id == item['source'] }[0]
+  end
+
   def load_books
     load_data('./data/books.json')&.each do |item|
       book = Book.new(item['publisher'], item['cover_state'], item['publish_date'])
-      book.author = @item_props.select { |prop| prop.id == item['author'] }[0]
+      book = set_item_props(book, item)
+      @items<<book
+    end
+  end
+
+  def load_games
+    load_data('./data/games.json')&.each do |item|
+      game = Game.new(multiplayer: item['multiplayer'], last_played_at: item['last_played_at'], publish_date: item['publish_date'])
+      game = set_item_props(game, item)
+      @items<<game
     end
   end
 end
