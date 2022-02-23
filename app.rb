@@ -14,7 +14,7 @@ require_relative './app_modules/add_props'
 require_relative './app_modules/list_props'
 
 require_relative './app_modules/store'
-require_relative './app_modules/read_data.rb'
+require_relative './app_modules/read_data'
 
 class App
   include AddItem
