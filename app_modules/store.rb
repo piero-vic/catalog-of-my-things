@@ -1,6 +1,8 @@
 require 'json'
 
 module Store
+  # Strore Items
+
   def store_books
     data = @items.grep(Book).map do |item|
       { publisher: item.publisher, cover_state: item.cover_state, publish_date: item.publish_date,
@@ -35,5 +37,21 @@ module Store
         source: item.source.id }
     end
     File.write('./data/games.json', JSON.dump(data))
+  end
+
+  # Store Props
+
+  def store_genres
+    data = @item_props.grep(Genre).map do |prop|
+      { id: prop.id, name: prop.name }
+    end
+    File.write('./data/genres.json', JSON.dump(data))
+  end
+
+  def store_labels
+    data = @item_props.grep(Label).map do |prop|
+      { id: prop.id, title: prop.title, color: prop.color }
+    end
+    File.write('./data/labels.json', JSON.dump(data))
   end
 end
