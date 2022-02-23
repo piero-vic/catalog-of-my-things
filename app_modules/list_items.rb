@@ -14,7 +14,7 @@ module ListItems
   end
 
   def list_movies
-    @items.select { |item| item.instance_of? Movie }.each do |movie|
+    @items.grep(Movie).each do |movie|
       print "Silent: #{movie.silent ? 'yes' : 'no'}\n\n"
     end
   end
