@@ -6,7 +6,7 @@ require_relative './classes/game'
 require_relative './classes/genre'
 require_relative './classes/label'
 require_relative './classes/author'
-# require_relative './classes/source'
+require_relative './classes/source'
 
 require_relative './app_modules/add_item'
 require_relative './app_modules/list_items'

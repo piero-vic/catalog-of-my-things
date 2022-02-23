@@ -27,4 +27,13 @@ module AddProps
                   end [0] || Author.new(first_name, last_name)
     @item_props.push(item.author) unless @item_props.include?(item.author)
   end
+
+  def add_source(item)
+    print "\nEnter source: "
+    source_name = gets.chomp.downcase
+    item.source = @item_props.select do |prop|
+                   prop.name == source_name && prop.instance_of?(Source)
+                 end [0] || Source.new(source_name)
+    @item_props.push(item.source) unless @item_props.include?(item.source)
+  end
 end

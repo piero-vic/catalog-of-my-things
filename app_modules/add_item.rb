@@ -8,7 +8,7 @@ module AddItem
     publish_date = gets.chomp
 
     book = Book.new(publisher, cover_state, publish_date)
-    add_author(book)
+    add_source(book)
     @items.push(book)
   end
 
