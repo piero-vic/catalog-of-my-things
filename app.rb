@@ -3,10 +3,11 @@ require_relative './classes/movie'
 require_relative './classes/music_album'
 require_relative './classes/game'
 require_relative './app_modules/add_item'
+require_relative './app_modules/list_items'
 
 class App
   include AddItem
-
+  include ListItem
   def initialize
     @items = []
   end
@@ -25,7 +26,7 @@ class App
       when 1
         add_new_item
       when 2
-        puts 'List Items'
+        list_book
       when 3
         puts 'List Properties'
       else
