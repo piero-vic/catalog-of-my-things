@@ -18,4 +18,13 @@ module AddProps
                  end [0] || Label.new(label_title, label_color)
     @item_props.push(item.label) unless @item_props.include?(item.label)
   end
+
+  def add_author(item)
+    print "\nEnter author's fullname: "
+    first_name, last_name = gets.chomp.downcase.split
+    item.author = @item_props.select do |prop|
+                    prop.first_name == first_name && prop.last_name == last_name && prop.instance_of?(Author)
+                  end [0] || Author.new(first_name, last_name)
+    @item_props.push(item.author) unless @item_props.include?(item.author)
+  end
 end
