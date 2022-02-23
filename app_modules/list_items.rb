@@ -1,8 +1,15 @@
-module ListItem
-  def list_book
+module ListItems
+  def list_books
     @items.grep(Book).each do |book|
       puts "Publisher: #{book.publisher}"
       print "Cover State: #{book.cover_state}\n\n"
+    end
+  end
+
+  def list_games
+    @items.grep(Game).each do |game|
+      puts "Multiplayer: #{game.multiplayer ? 'yes' : 'no'}"
+      print "Last time played: #{game.last_played_at}\n\n"
     end
   end
 end

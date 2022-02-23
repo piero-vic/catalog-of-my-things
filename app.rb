@@ -7,7 +7,7 @@ require_relative './app_modules/list_items'
 
 class App
   include AddItem
-  include ListItem
+  include ListItems
   def initialize
     @items = []
   end
@@ -26,7 +26,7 @@ class App
       when 1
         add_new_item
       when 2
-        list_book
+        list_games
       when 3
         puts 'List Properties'
       else
