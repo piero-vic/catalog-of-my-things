@@ -11,11 +11,13 @@ require_relative './classes/source'
 require_relative './app_modules/add_item'
 require_relative './app_modules/list_items'
 require_relative './app_modules/add_props'
+require_relative './app_modules/list_props'
 
 class App
   include AddItem
   include ListItems
   include AddProps
+  include ListProps
 
   def initialize
     @items = []
@@ -38,7 +40,7 @@ class App
       when 2
         list_items
       when 3
-        puts 'List Properties'
+        list_props
       else
         break
       end
