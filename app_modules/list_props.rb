@@ -1,14 +1,26 @@
 module ListProps
   def list_genres
+    puts 'Genres'
     @item_props.grep(Genre).each_with_index do |prop, index|
-      print "#{index + 1}) #{prop.name.capitalize}\n\n"
+      puts "#{index + 1}) #{prop.name.capitalize}"
     end
+    puts
   end
 
   def list_labels
+    puts 'Labels'
     @item_props.grep(Label).each_with_index do |prop, index|
-      print "#{index + 1}) #{prop.title.capitalize} - #{prop.color.capitalize}\n\n"
+      puts "#{index + 1}) #{prop.title.capitalize} - #{prop.color.capitalize}"
     end
+    puts
+  end
+
+  def list_authors
+    puts 'Authors:'
+    @item_props.grep(Author).each_with_index do |prop, index|
+      puts "#{index + 1}) #{prop.first_name.capitalize} #{prop.last_name.capitalize}"
+    end
+    puts
   end
 
   def list_props
@@ -27,7 +39,7 @@ module ListProps
     when 2
       list_labels
     when 3
-      list_movies
+      list_authors
     when 4
       list_games
     end
