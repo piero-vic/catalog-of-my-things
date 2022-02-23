@@ -12,4 +12,10 @@ module ListItems
       print "Last time played: #{game.last_played_at}\n\n"
     end
   end
+
+  def list_movies
+    @items.select { |item| item.instance_of? Movie }.each do |movie|
+      print "Silent: #{movie.silent ? 'yes' : 'no'}\n\n"
+    end
+  end
 end
