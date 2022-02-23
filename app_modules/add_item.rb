@@ -6,7 +6,10 @@ module AddItem
     cover_state = gets.chomp
     print "\nEnter publishing date: "
     publish_date = gets.chomp
-    @items.push(Book.new(publisher, cover_state, publish_date))
+
+    book = Book.new(publisher, cover_state, publish_date)
+    add_genre(book)
+    @items.push(book)
   end
 
   def add_album

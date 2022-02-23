@@ -2,14 +2,21 @@ require_relative './classes/book'
 require_relative './classes/movie'
 require_relative './classes/music_album'
 require_relative './classes/game'
+
+require_relative './classes/genre'
+
 require_relative './app_modules/add_item'
 require_relative './app_modules/list_items'
+require_relative './app_modules/add_props'
 
 class App
   include AddItem
   include ListItems
+  include AddProps
+
   def initialize
     @items = []
+    @item_props = []
   end
 
   def run
