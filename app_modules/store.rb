@@ -54,4 +54,18 @@ module Store
     end
     File.write('./data/labels.json', JSON.dump(data))
   end
+
+  def store_authors
+    data = @item_props.grep(Author).map do |prop|
+      { id: prop.id, first_name: prop.first_name, last_name: prop.last_name }
+    end
+    File.write('./data/authors.json', JSON.dump(data))
+  end
+
+  def store_sources
+    data = @item_props.grep(Source).map do |prop|
+      { id: prop.id, name: prop.name }
+    end
+    File.write('./data/sources.json', JSON.dump(data))
+  end
 end
