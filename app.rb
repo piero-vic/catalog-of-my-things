@@ -13,11 +13,14 @@ require_relative './app_modules/list_items'
 require_relative './app_modules/add_props'
 require_relative './app_modules/list_props'
 
+require_relative './app_modules/store'
+
 class App
   include AddItem
   include ListItems
   include AddProps
   include ListProps
+  include Store
 
   def initialize
     @items = []
