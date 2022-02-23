@@ -6,9 +6,8 @@ module AddItem
     cover_state = gets.chomp
     print "\nEnter publishing date: "
     publish_date = gets.chomp
-
     book = Book.new(publisher, cover_state, publish_date)
-    add_source(book)
+    add_item_props(book)
     @items.push(book)
   end
 
@@ -19,7 +18,9 @@ module AddItem
     spotify = gets.chomp.downcase
     spotify = true if spotify == 'y'
     spotify = false if spotify == 'n'
-    @items.push(MusicAlbum.new(publish_date, on_spotify: spotify))
+    album = MusicAlbum.new(publish_date, on_spotify: spotify)
+    add_item_props(album)
+    @items.push(album)
   end
 
   def add_movie
@@ -29,7 +30,9 @@ module AddItem
     silent = gets.chomp.downcase
     silent = true if silent == 'y'
     silent = false if silent == 'n'
-    @items.push(Movie.new(publish_date, silent: silent))
+    movie = Movie.new(publish_date, silent: silent)
+    add_item_props(movie)
+    @items.push(movie)
   end
 
   def add_game
@@ -41,7 +44,9 @@ module AddItem
     multiplayer = false if multiplayer == 'n'
     print "\nEnter date of last play: "
     last_played_at = gets.chomp
-    @items.push(Game.new(publish_date: publish_date, multiplayer: multiplayer, last_played_at: last_played_at))
+    game = Game.new(publish_date: publish_date, multiplayer: multiplayer, last_played_at: last_played_at)
+    add_item_props(game)
+    @items.push(game)
   end
 
   def add_new_item
