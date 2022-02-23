@@ -18,4 +18,10 @@ module ListItems
       print "Silent: #{movie.silent ? 'yes' : 'no'}\n\n"
     end
   end
+
+  def list_music_albums
+    @items.grep(MusicAlbum).each do |album|
+      print "Is it on Spotify?: #{album.on_spotify ? 'yes' : 'no'}\n\n"
+    end
+  end
 end
