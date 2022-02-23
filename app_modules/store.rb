@@ -68,5 +68,4 @@ module Store
     end
     File.write('./data/sources.json', JSON.dump(data))
   end
-
 end
