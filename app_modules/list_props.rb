@@ -5,6 +5,12 @@ module ListProps
     end
   end
 
+  def list_labels
+    @item_props.grep(Label).each_with_index do |prop, index|
+      print "#{index + 1}) #{prop.title.capitalize} - #{prop.color.capitalize}\n\n"
+    end
+  end
+
   def list_props
     menu = <<~HEREDOC
       [1] List all genres
@@ -19,7 +25,7 @@ module ListProps
     when 1
       list_genres
     when 2
-      list_music_albums
+      list_labels
     when 3
       list_movies
     when 4
