@@ -26,7 +26,7 @@ class App
       when 1
         add_new_item
       when 2
-        list_movies
+        list_music_albums
       when 3
         puts 'List Properties'
       else
