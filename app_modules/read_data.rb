@@ -32,17 +32,47 @@ module ReadData
 
   def load_books
     load_data('./data/books.json')&.each do |item|
-      book = Book.new(item['publisher'], item['cover_state'], item['publish_date'])
-      book = set_item_props(book, item)
-      @items<<book
+      book = Book.new(item['publisher'], item['cover_state'], item['publish_date'], archived: item['archived'])
+      set_item_props(book, item)
+      @items << book
     end
   end
 
   def load_games
     load_data('./data/games.json')&.each do |item|
-      game = Game.new(multiplayer: item['multiplayer'], last_played_at: item['last_played_at'], publish_date: item['publish_date'])
-      game = set_item_props(game, item)
-      @items<<game
+      game = Game.new(multiplayer: item['multiplayer'], last_played_at: item['last_played_at'],
+                      publish_date: item['publish_date'], archived: item['archived'])
+      set_item_props(game, item)
+      @items << game
     end
+  end
+
+  def load_music_albums
+    load_data('./data/music_albums.json')&.each do |item|
+      music_album = MusicAlbum.new(item['publish_date'], on_spotify: item['on_spotify'],
+                                   archived: item['archived'])
+      set_item_props(music_album, item)
+      @items << music_album
+    end
+  end
+
+  def load_movies
+    load_data('./data/movies.json')&.each do |item|
+      movie = Movie.new(item['publish_date'], silent: item['silent'], archived: item['archived'])
+      set_item_props(movie, item)
+      @items << movie
+    end
+  end
+
+  def load_all_data
+    load_genres
+    load_labels
+    load_sources
+    load_authors
+
+    load_books
+    load_games
+    load_movies
+    load_music_albums
   end
 end
