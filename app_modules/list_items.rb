@@ -1,10 +1,10 @@
 module ListItems
   def print_item_props(item)
     puts "Publish date: #{item.publish_date}"
-    puts "Genre: #{item.genre.name.capitalize}"
-    puts "Label: #{item.label.title.capitalize} color: #{item.label.color.capitalize}"
-    puts "Author: #{item.author.first_name.capitalize} #{item.author.last_name.capitalize}"
-    puts "Source: #{item.source.name.capitalize}"
+    puts "Genre: #{item.genre.name&.capitalize}"
+    puts "Label: #{item.label.title&.capitalize} color: #{item.label.color&.capitalize}"
+    puts "Author: #{item.author.first_name&.capitalize} #{item.author.last_name&.capitalize}"
+    puts "Source: #{item.source.name&.capitalize}"
   end
 
   def list_books
