@@ -1,27 +1,27 @@
 CREATE TABLE author (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50)
 );
 
 CREATE TABLE source (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE genre (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE label (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   title VARCHAR(50) NOT NULL,
   color VARCHAR(50) NOT NULL
 ); 
 
 CREATE TABLE music_album (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   on_spotify BOOLEAN NOT NULL,
   publish_date DATE NOT NULL,
   archived BOOLEAN NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE music_album (
 );
 
 CREATE TABLE games (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   multiplayer BOOLEAN NOT NULL,
   last_played_at DATE NOT NULL,
   publish_date DATE NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE games (
 );
 
 CREATE TABLE movies (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   silent BOOLEAN NOT NULL,
   publish_date DATE NOT NULL,
   archived BOOLEAN NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE books (
-  id SERIAL INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   publisher VARCHAR(50) NOT NULL,
   cover_state VARCHAR(50) NOT NULL,
   publish_date DATE NOT NULL,
