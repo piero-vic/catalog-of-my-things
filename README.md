@@ -10,7 +10,6 @@
 - Rubocop
 - Rspec
 
-
 ## Getting Started
 
 In order to run this project clone the repo and cd into the `catalog-of-my-things` directory.
@@ -18,23 +17,10 @@ In order to run this project clone the repo and cd into the `catalog-of-my-thing
 - `git clone https://github.com/piero-vic/catalog-of-my-things.git`
 - `cd catalog-of-my-things`
 
-Try the app by running `ruby main.rb`
-
 
 ### Prerequisites
 
-> Ruby <br>
-> Bundler
-
-### Install
-
-To install all dependencies listed in `Gemfile`, run this command:
-
-```shell
-  bundle install
-```
-
-It might ask you for your PC password because it's installing file on your system files.
+To run this app you will need to have Ruby installed.
 
 ### Usage
 
