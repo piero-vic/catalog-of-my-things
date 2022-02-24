@@ -12,7 +12,7 @@ CREATE TABLE source (
 CREATE TABLE genre (
   id SERIAL INT PRIMARY KEY,
   name VARCHAR(50) NOT NULL
-); 
+);
 
 CREATE TABLE label (
   id SERIAL INT PRIMARY KEY,
@@ -30,6 +30,15 @@ CREATE TABLE musicalbum (
  label_id INT REFERENCES label(id),
  source_id INT REFERENCES source(id)
 );
-  
-  
-  
+
+CREATE TABLE games (
+  id SERIAL INT PRIMARY KEY,
+  multiplayer BOOLEAN NOT NULL,
+  last_played_at DATE NOT NULL,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  genre_id INT REFERENCES genre(id),
+  author_id INT REFERENCES author(id),
+  label_id INT REFERENCES label(id),
+  source_id INT REFERENCES source(id)
+);
