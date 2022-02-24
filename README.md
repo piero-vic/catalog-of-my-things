@@ -7,6 +7,9 @@
 ## Built With
 
 - Ruby
+- Rubocop
+- Rspec
+
 
 ## Getting Started
 
@@ -17,6 +20,43 @@ In order to run this project clone the repo and cd into the `catalog-of-my-thing
 
 Try the app by running `ruby main.rb`
 
+
+### Prerequisites
+
+> Ruby <br>
+> Bundler
+
+### Install
+
+To install all dependencies listed in `Gemfile`, run this command:
+
+```shell
+  bundle install
+```
+
+It might ask you for your PC password because it's installing file on your system files.
+
+### Usage
+
+To use the console application you can start by simply running command in the project's root directory
+
+```shell
+  ruby main.rb
+```
+
+### Run tests
+
+To run all tests you could simply run this command:
+
+```shell
+  rspec
+```
+
+If you choose to run certain file you can use this command:
+
+```shell
+  rspec spec filename_spec.rb
+```
 
 ## Authors
 
@@ -30,6 +70,7 @@ Try the app by running `ruby main.rb`
 
 - GitHub: [@Algerina](https://github.com/Algerina)
 - LinkedIn: [Amel Khiri](https://linkedin.com/in/amel-khiri-qahwadji-37a550135)
+- Twitter: [@Amel khiri](https://twitter.com/AmalQahwadji)
 
 👤 **Eapen Zacharias**
 
