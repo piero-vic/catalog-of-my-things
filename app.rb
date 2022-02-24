@@ -30,14 +30,10 @@ class App
   end
 
   def run
+    load_all_data
     print "Welcome to the catalog of things\n\n"
     loop do
-      puts <<~HEREDOC
-        [1] Add new Item
-        [2] List Items
-        [3] List Properties
-        [4] Exit
-      HEREDOC
+      print "[1] Add new Item\n[2] List Items\n[3] List Properties\n[4] Exit\n"
       user_input = gets.chomp.to_i
       case user_input
       when 1
@@ -50,5 +46,6 @@ class App
         break
       end
     end
+    store_all_data
   end
 end
