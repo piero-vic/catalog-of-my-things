@@ -23,7 +23,7 @@ Try the app by running `ruby main.rb`
 👤 **Anibal Amoroso**
 
 - GitHub: [@sj1978](https://github.com/sj1978)
-- - Twitter: [@AmorosoAnibal](https://twitter.com/AmorosoAnibal)
+- Twitter: [@AmorosoAnibal](https://twitter.com/AmorosoAnibal)
 - LinkedIn: [Anibal Amoroso](https://www.linkedin.com/in/anibalamoroso/)
 
 👤 **Amel Khiri**
