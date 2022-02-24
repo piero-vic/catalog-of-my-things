@@ -9,5 +9,11 @@ CREATE TABLE source (
   name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE genre (
+   id SERIAL INT PRIMARY KEY,
+   name VARCHAR(50) NOT NULL
+); 
+
+
 
 
