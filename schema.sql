@@ -1,0 +1,21 @@
+CREATE TABLE author (
+  id SERIAL INT PRIMARY KEY,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50)
+);
+
+CREATE TABLE source (
+  id SERIAL INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE genre (
+  id SERIAL INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL
+); 
+
+CREATE TABLE label (
+  id SERIAL INT PRIMARY KEY,
+  title VARCHAR(50) NOT NULL,
+  color VARCHAR(50) NOT NULL
+); 
