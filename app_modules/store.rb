@@ -68,4 +68,16 @@ module Store
     end
     File.write('./data/sources.json', JSON.dump(data))
   end
+
+  def store_all_data
+    store_authors
+    store_genres
+    store_labels
+    store_sources
+
+    store_books
+    store_games
+    store_movies
+    store_music_albums
+  end
 end
