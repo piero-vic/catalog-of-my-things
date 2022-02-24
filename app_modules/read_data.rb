@@ -50,7 +50,7 @@ module ReadData
   def load_music_albums
     load_data('./data/music_albums.json')&.each do |item|
       music_album = MusicAlbum.new(item['publish_date'], on_spotify: item['on_spotify'],
-                                   archived: item['archived'])
+                                                         archived: item['archived'])
       set_item_props(music_album, item)
       @items << music_album
     end
